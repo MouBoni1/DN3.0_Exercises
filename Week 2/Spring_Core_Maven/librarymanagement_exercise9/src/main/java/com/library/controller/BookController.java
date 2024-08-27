@@ -44,7 +44,7 @@ public class BookController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+    public ResponseEntity<Object> deleteBook(@PathVariable Long id) {
         return bookRepository.findById(id)
                 .map(book -> {
                     bookRepository.delete(book);
